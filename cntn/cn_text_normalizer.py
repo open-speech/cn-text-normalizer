@@ -14,7 +14,7 @@ import sys
 import re
 from functools import partial
 
-import pycnnum
+from cntn import pycnnum
 
 # todo:
 # - 几分之几
@@ -61,10 +61,10 @@ def full2half(ustring):
     return ss
 
 
-def cntn(in_str, numbering_type="low", big=False, traditional=False, alt_zero=False,
-         alt_two=False, use_zeros=True, use_units=True):
+def w2s(in_str, numbering_type="low", big=False, traditional=False, alt_zero=False,
+        alt_two=False, use_zeros=True, use_units=True):
     num2cn = partial(pycnnum.num2cn, numbering_type=numbering_type, big=big, traditional=traditional,
-                     alt_zero=alt_zero, alt_two=alt_two, use_zeros=use_zeros, use_units=use_units)
+                        alt_zero=alt_zero, alt_two=alt_two, use_zeros=use_zeros, use_units=use_units)
 
     in_str = in_str.upper()
 
@@ -74,7 +74,7 @@ def cntn(in_str, numbering_type="low", big=False, traditional=False, alt_zero=Fa
     strings = split_pat.split(in_str)
     strings = list(filter(None, strings))
 
-    print(strings)
+    # print(strings)
 
     while i < len(strings):
         # 处理数字串
@@ -109,5 +109,5 @@ def cntn(in_str, numbering_type="low", big=False, traditional=False, alt_zero=Fa
 
 
 if __name__ == '__main__':
-    print(cntn("小王的身高是153.5cm,梦想是打篮球!我觉得有0.1%的可能性。"))
-    print(cntn("小王的钱包有1116$，可以买个iphone7s。"))
+    print(w2s("小王的身高是153.5cm,梦想是打篮球!我觉得有0.1%的可能性。"))
+    print(w2s("小王的钱包有1116$，可以买个iphone7s。"))
