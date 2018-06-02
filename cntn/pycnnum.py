@@ -358,7 +358,8 @@ def num2cn(num_str, numbering_type=NUMBERING_TYPES[0], big=False, traditional=Fa
         if result.startswith(p):
             return CHINESE_DIGIS[0] + result
 
-    if len(result) >= 3 and result[1] in [SMALLER_CHINESE_NUMERING_UNITS_SIMPLIFIED[0], SMALLER_CHINESE_NUMERING_UNITS_TRADITIONAL[0]] and \
+    # ^10, 11, .., 19
+    if len(result) >= 2 and result[1] in [SMALLER_CHINESE_NUMERING_UNITS_SIMPLIFIED[0], SMALLER_CHINESE_NUMERING_UNITS_TRADITIONAL[0]] and \
             result[0] in [CHINESE_DIGIS[1], BIG_CHINESE_DIGIS_SIMPLIFIED[1], BIG_CHINESE_DIGIS_TRADITIONAL[1]]:
         result = result[1:]
 

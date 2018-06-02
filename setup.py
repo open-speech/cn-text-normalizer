@@ -9,7 +9,7 @@ def read_readme():
 
 setup(
     name='cntn',
-    version='0.0.2',
+    version='0.0.3',
     python_requires='>=3.3',
     description='Convert chinese written string to spoken string',
     long_description=read_readme(),
