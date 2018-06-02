@@ -110,4 +110,4 @@ def cntn(in_str, numbering_type="low", big=False, traditional=False, alt_zero=Fa
 
 if __name__ == '__main__':
     print(cntn("小王的身高是153.5cm,梦想是打篮球!我觉得有0.1%的可能性。"))
-    print(cntn("小王的钱包有1116$，可以买个iphone7。"))
+    print(cntn("小王的钱包有1116$，可以买个iphone7s。"))
