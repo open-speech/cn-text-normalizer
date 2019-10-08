@@ -20,7 +20,7 @@ from cntn import pycnnum
 # - 几分之几
 
 cn_key = [u"[\u4e00-\u9fff]+"]
-en_key = ['[A-Z]+']
+en_key = ['[a-zA-Z]+']
 num_key = ['\d+\.\d+', '\d+']
 
 PRE_UNITS = {
@@ -29,11 +29,11 @@ PRE_UNITS = {
 
 POST_UNITS = {
     # 科学符号
-    "CM": "厘米",
-    "KM": "公里",
-    "M": "米",
-    "KG": "公斤",
-    "G": "克",
+    "cm": "厘米",
+    "km": "公里",
+    "m": "米",
+    "kg": "公斤",
+    "g": "克",
     # 货币符号
     # "$" : "美元",
     # "\$" : "美元", # for regex happy
@@ -65,8 +65,6 @@ def w2s(in_str, numbering_type="low", big=False, traditional=False, alt_zero=Fal
         alt_two=False, use_zeros=True, use_units=True):
     num2cn = partial(pycnnum.num2cn, numbering_type=numbering_type, big=big, traditional=traditional,
                         alt_zero=alt_zero, alt_two=alt_two, use_zeros=use_zeros, use_units=use_units)
-
-    in_str = in_str.upper()
 
     results = []
     i = 0
